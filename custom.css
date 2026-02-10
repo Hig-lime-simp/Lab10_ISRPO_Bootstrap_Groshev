@@ -1,0 +1,14 @@
+.margin{
+    margin-top: 40px;
+    margin-left: 40px;
+}
+.green-button{
+    margin-top: 5px;
+}
+.card{
+transition: transform 0.3 ease;
+margin-bottom: 30px;
+}
+.card:hover{
+    transform: scale(1.05);
+}
