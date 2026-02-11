@@ -1,0 +1,269 @@
+body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+    
+    .timeline-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+        text-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    }
+    
+    .timeline-subtitle {
+        color: #4a5568;
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 50px;
+    }
+    
+    /* ВРЕМЕННАЯ ШКАЛА */
+    .timeline {
+        position: relative;
+        padding: 40px 0;
+        margin-top: 30px;
+    }
+    
+    /* Центральная линия с градиентом */
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5px;
+        height: 100%;
+        background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, #e74c3c 100%);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        animation: glowLine 3s infinite alternate;
+    }
+    
+    @keyframes glowLine {
+        from { box-shadow: 0 0 15px rgba(102, 126, 234, 0.5); }
+        to { box-shadow: 0 0 25px rgba(102, 126, 234, 0.8); }
+    }
+    
+    /* Контейнер события */
+    .timeline-item {
+        position: relative;
+        margin-bottom: 70px;
+        width: 50%;
+        padding-right: 50px;
+        text-align: right;
+        clear: both;
+    }
+    
+    /* Правые элементы (по умолчанию) */
+    .timeline-item {
+        float: left;
+    }
+    
+    /* Левые элементы */
+    .timeline-item-left {
+        float: right;
+        text-align: left;
+        padding-right: 0;
+        padding-left: 50px;
+    }
+    
+    /* Круглые точки на линии */
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        right: -12px;
+        top: 15px;
+        width: 24px;
+        height: 24px;
+        background: white;
+        border: 5px solid #667eea;
+        border-radius: 50%;
+        z-index: 2;
+        box-shadow: 0 0 15px rgba(102, 126, 234, 0.6);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+    
+    /* Точки для левых элементов */
+    .timeline-item-left::before {
+        right: auto;
+        left: -12px;
+    }
+    
+    /* Анимация пульсации для точек */
+    @keyframes pulse {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+            transform: scale(1);
+        }
+        50% {
+            box-shadow: 0 0 0 15px rgba(102, 126, 234, 0);
+            transform: scale(1.2);
+        }
+    }
+    
+    /* Увеличение точки при наведении */
+    .timeline-item:hover::before {
+        transform: scale(1.5);
+        background: #667eea;
+        border-color: white;
+        box-shadow: 0 0 30px #667eea;
+    }
+    
+    /* Карточка с контентом */
+    .timeline-content {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 30px 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+    }
+    
+    .timeline-content:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        background: white;
+    }
+    
+    .timeline-content h5 {
+        color: #2d3748;
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+    
+    .timeline-content p {
+        color: #4a5568;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Бейдж с годом */
+    .timeline-content .badge {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+    
+    /* Иконки в бейджах */
+    .timeline-content .badge i {
+        margin-right: 5px;
+    }
+    
+    /* Стрелочка-указатель */
+    .timeline-content::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        right: -15px;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid rgba(255, 255, 255, 0.95);
+    }
+    
+    .timeline-item-left .timeline-content::after {
+        right: auto;
+        left: -15px;
+        border-left: none;
+        border-right: 15px solid rgba(255, 255, 255, 0.95);
+    }
+    
+    /* Мобильная версия */
+    @media (max-width: 768px) {
+        .timeline-title {
+            font-size: 2rem;
+        }
+        
+        /* Линия слева */
+        .timeline::before {
+            left: 30px;
+        }
+        
+        /* Все элементы слева */
+        .timeline-item,
+        .timeline-item-left {
+            width: 100%;
+            float: none;
+            margin-left: 0 !important;
+            padding-left: 70px;
+            padding-right: 20px;
+            text-align: left;
+        }
+        
+        /* Точки слева */
+        .timeline-item::before,
+        .timeline-item-left::before {
+            left: 18px;
+            right: auto;
+        }
+        
+        /* Стрелочки для мобильных */
+        .timeline-content::after,
+        .timeline-item-left .timeline-content::after {
+            right: auto;
+            left: -15px;
+            border-left: none;
+            border-right: 15px solid rgba(255, 255, 255, 0.95);
+        }
+        
+        .timeline-content {
+            padding: 20px;
+        }
+    }
+    
+    /* Анимация появления */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .timeline-item {
+        animation: fadeInUp 0.8s ease forwards;
+        opacity: 0;
+    }
+    
+    .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+    .timeline-item:nth-child(5) { animation-delay: 1s; }
+    .timeline-item:nth-child(6) { animation-delay: 1.2s; }
+    
+    /* Декоративные элементы */
+    .timeline-emoji {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .company-name {
+        font-weight: 600;
+        color: #667eea;
+        display: block;
+        margin-top: 10px;
+    }
+    
+    .timeline-footer {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.3);
+    }
