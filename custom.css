@@ -13,11 +13,12 @@ margin-bottom: 30px;
     transform: scale(1.05);
 } */
  /* Общие стили */
-body {
+
+/* body {
 font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 /* Кастомные цвета для навбара */
-.navbar-brand {
+/* .navbar-brand {
 font-weight: bold;
 font-size: 1.5rem;
 letter-spacing: 1px;
@@ -27,7 +28,7 @@ color: #ffc107 !important;
 transition: color 0.3s ease;
 }
 /* Улучшение Hero-секции */
-#home {
+/* #home {
 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 color: white;
 min-height: 400px;
@@ -47,9 +48,9 @@ transition: transform 0.3s ease;
 #home .btn:hover {
 transform: translateY(-3px);
 box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-/* Анимация для карточек */
-.card {
+} */
+
+/* .card {
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
@@ -57,19 +58,19 @@ transform: translateY(-10px);
 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
 }
 /* Стилизация кнопок */
-.btn {
+/* .btn {
 border-radius: 25px;
 padding: 10px 30px;
 font-weight: 500;
 transition: all 0.3s ease;
 }
 /* Улучшение формы */
-.form-control:focus {
+/* .form-control:focus { 
 border-color: #667eea;
 box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-}
+}  */
 /* Анимация для бейджей */
-.badge {
+/* .badge {
 padding: 8px 15px;
 font-size: 0.9rem;
 font-weight: 500;
@@ -78,9 +79,9 @@ transition: transform 0.2s ease;
 .badge:hover {
 transform: scale(1.1);
 cursor: pointer;
-}
+} */
 /* Стилизация прогресс-баров */
-.progress {
+/* .progress {
 height: 25px;
 border-radius: 15px;
 background-color: #e9ecef;
@@ -89,18 +90,18 @@ background-color: #e9ecef;
 border-radius: 15px;
 font-weight: bold;
 line-height: 25px;
-}
+} */
 /* Улучшение аккордеона */
-.accordion-button:not(.collapsed) {
+/* .accordion-button:not(.collapsed) {
 background-color: #667eea;
 color: white;
 }
 .accordion-button:focus {
 box-shadow: none;
 border-color: #667eea;
-}
+} */
 /* Футер */
-footer {
+/* footer {
 background-color: #212529;
 color: white;
 padding: 40px 0;
@@ -117,9 +118,9 @@ transition: color 0.3s ease;
 }
 footer a:hover {
 color: #ffc107;
-}
+} */
 /* Адаптивность */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 #home {
 min-height: 300px;
 }
@@ -129,4 +130,256 @@ font-size: 2rem;
 .card {
 margin-bottom: 20px;
 }
+}  */ 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #2d3436;
+    background-color: #fafef4;
+}
+
+/* Навигация */
+.navbar {
+    background: rgba(248, 255, 240, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(170, 224, 120, 0.15);
+}
+
+.navbar-brand {
+    color: #7fb33e !important;
+}
+
+.nav-link {
+    color: #2d3436 !important;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #8fc44c !important;
+}
+
+/* Hero секция */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(145deg, #f8ffe6 0%, #f0fae4 100%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d3e1f;
+}
+
+.hero .lead {
+    font-size: 1.25rem;
+    color: #5a6b47;
+}
+
+/* Заголовки секций */
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    position: relative;
+    color: #3a5a1a;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #b1d87c;
+}
+
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Аватар */
+.avatar {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(170, 224, 120, 0.2);
+    border: 4px solid #e2f0cc;
+}
+
+/* Карточки навыков */
+.skill-card {
+    padding: 30px 20px;
+    background: white;
+    border: 1px solid #dcedb9;
+    border-radius: 16px;
+    transition: all 0.25s;
+    height: 100%;
+}
+
+.skill-card:hover {
+    border-color: #aad070;
+    box-shadow: 0 15px 35px rgba(170, 224, 120, 0.2);
+    background: #fdfff9;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: #8fc44c;
+    margin-bottom: 1rem;
+}
+
+/* Карточки проектов */
+.project-card {
+    border: 1px solid #dcedb9;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.25s;
+    height: 100%;
+    background: white;
+}
+
+.project-card:hover {
+    border-color: #aad070;
+    box-shadow: 0 15px 35px rgba(170, 224, 120, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card-body {
+    padding: 1.5rem;
+}
+
+/* Кнопки */
+.btn-primary {
+    background: #8fc44c;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #7fb33e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(143, 196, 76, 0.3);
+}
+
+.btn-outline-secondary {
+    border: 1px solid #c5e09b;
+    color: #5a6b47;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    background: rgba(255,255,255,0.7);
+}
+
+.btn-outline-secondary:hover {
+    background: #e2f0cc;
+    border-color: #aad070;
+    color: #3a5a1a;
+}
+
+.btn-outline-primary {
+    border: 1px solid #8fc44c;
+    color: #7fb33e;
+    border-radius: 30px;
+    padding: 8px 25px;
+}
+
+.btn-outline-primary:hover {
+    background: #8fc44c;
+    color: white;
+    border-color: #8fc44c;
+}
+
+/* Форма */
+.form-control {
+    border: 1px solid #dcedb9;
+    padding: 12px;
+    border-radius: 12px;
+    background: #fdfff9;
+}
+
+.form-control:focus {
+    border-color: #8fc44c;
+    box-shadow: 0 0 0 3px rgba(143, 196, 76, 0.15);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #3a5a1a;
+}
+
+/* Футер */
+.footer {
+    background: #eaf3dd;
+    padding: 60px 0 30px;
+    margin-top: 80px;
+    border-top: 1px solid #d4e8b5;
+}
+
+.footer h5, .footer h6 {
+    color: #3a5a1a;
+}
+
+.social-link {
+    color: #7fb33e;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: all 0.2s;
+}
+
+.social-link:hover {
+    color: #5e8c31;
+    transform: translateY(-3px);
+}
+
+/* Фон для секций */
+.bg-light {
+    background-color: #f4fbe9 !important;
+}
+
+hr {
+    border-color: #d4e8b5 !important;
+    opacity: 0.5;
+}
+
+.text-muted {
+    color: #6a7c54 !important;
+}
+
+/* Плавный скролл */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .avatar {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
 }
