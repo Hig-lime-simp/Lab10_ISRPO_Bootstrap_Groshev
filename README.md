@@ -55,8 +55,7 @@ Lab10_Bootstrap_Groshev/
 
 ## Ссылки:
 
-- [Документация Bootstrap](https://getbootstrap.com/docs/5.3/)
-- [Репозиторий GitHub](https://github.com/GroshevNikita/Lab10_Bootstrap_Groshev)
+- [Репозиторий GitHub](https://github.com/Hig-lime-simp)
 
 ---
 
